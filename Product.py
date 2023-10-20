@@ -12,7 +12,6 @@ class Product(object):
         self.__width = _width
         self.__height = _height
         self.__length = _length
-        print("Product created.")
 
     def get_title(self) -> str:
         return self.__title

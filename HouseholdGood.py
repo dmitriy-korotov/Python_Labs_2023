@@ -8,7 +8,6 @@ class HouseholdGood(Product):
         if _quality < 0 or _quality > 10:
             raise Exception("Quality must be in interval [0, 10]")
         self.__quality = _quality
-        print("HouseholdGood created.")
 
     def __str__(self) -> str:
         return super().__str__() + f"\nQuality: {self.__quality}"

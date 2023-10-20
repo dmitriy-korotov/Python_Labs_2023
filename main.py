@@ -1,22 +1,17 @@
 from HouseholdGood import HouseholdGood
 from FoodProduct import FoodProduct
+from Shop import Shop
+import InputHandlers as Ih
 
 
 def main():
-    prod = HouseholdGood("Title", 500, 10, 10, 10, 5)
-    print(prod)
 
-    try:
-        title = input("Input title: ")
-        cost = int(input("Input cost: "))
-        width = int(input("Input width: "))
-        height = int(input("Input height: "))
-        length = int(input("Input length: "))
-        date = input("Input date: ")
+    shop = Shop("BestShop")
 
-        food_prod = FoodProduct(title, cost, width, height, length, date)
-    except ValueError:
-        print("Incorrect data.")
+    product = Ih.input_food_product()
+    shop.add_product(shop)
+
+    shop.print_products()
 
 
 if __name__ == "__main__":
