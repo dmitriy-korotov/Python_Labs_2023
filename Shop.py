@@ -11,7 +11,7 @@ class Shop(object):
         self.__products.append(_product)
 
     def remove_product(self, _title: str):
-        self.__products.remove(__products.find(lambda x: x.get_title() == _title))
+        self.__products.remove(self.__products.index(lambda x: x.get_title() == _title))
 
     def get_products(self):
         return self.__products
