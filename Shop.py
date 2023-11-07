@@ -25,5 +25,4 @@ class Shop(object):
     def print_products(self):
         print("\t\tProducts:")
         for product in self.get_products():
-            product.sell()
             print(f"\n\n{product}\n\n")
