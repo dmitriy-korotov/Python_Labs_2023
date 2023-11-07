@@ -35,7 +35,7 @@ class Product(object):
 
     def __add__(self, _other) -> int:
         v_this_product = self.__width * self.__height * self.__length
-        v_other_product = other.__width * other.__height * other.__length
+        v_other_product = _other.__width * _other.__height * _other.__length
         return v_this_product * v_other_product
 
     def __str__(self) -> str:

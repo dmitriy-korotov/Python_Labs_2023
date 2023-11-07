@@ -10,7 +10,7 @@ def input_int(_left_bound: int, _right_bound: int, _input_msg: str):
 
         try:
             int_num = int(num)
-        except Exception as ex:
+        except ValueError as ex:
             print("Can't cast to integer type, please retry")
         else:
             if _left_bound <= int_num <= _right_bound:
