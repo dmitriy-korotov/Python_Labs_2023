@@ -39,6 +39,8 @@ def main() -> None:
                 break
             print(f"=> ERROR: {reply}")
 
+    print("\t\t\tMailer client closed")
+
 
 if __name__ == "__main__":
     main()
