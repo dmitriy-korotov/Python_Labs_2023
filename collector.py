@@ -37,7 +37,9 @@ def letters_handler(_settings: dict) -> None:
                 subject = message["Subject"]
                 print(subject)
 
-        time.sleep(period_check)
+            time.sleep(period_check)
+        connection.close()
+        connection.logout()
 
 
 def closing_handler(_close_command: str) -> None:
