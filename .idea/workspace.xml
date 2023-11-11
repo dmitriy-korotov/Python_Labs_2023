@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b66b25f-7698-4ee0-be5c-53519d48cca0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/collector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.env" beforeDir="false" afterPath="$PROJECT_DIR$/settings.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/collector.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utility.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +42,11 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/PycharmProjects/PythonLabs&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/PycharmProjects/PythonLabs&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.collector">
+  <component name="RunManager" selected="Python.main">
     <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonLabs" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -168,6 +174,14 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.client" />
+      <item itemvalue="Python.collector" />
+      <item itemvalue="Python.lab_6_3_1" />
+      <item itemvalue="Python.lab_6_4_2" />
+      <item itemvalue="Python.server" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.collector" />
