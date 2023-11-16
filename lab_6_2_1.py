@@ -1,36 +1,47 @@
-from multiprocessing import Pool
+from threading import Thread
 from multiprocessing import Semaphore
 
 
-def increment(_target: int, _locker: Semaphore = None) -> None:
-    if _locker is None:
-        _target += 1
+counter = 0
+locker = None
+
+
+def increment() -> None:
+    global counter
+    global locker
+    if locker is None:
+        counter += 1
     else:
-        with _locker:
-            _target += 1
-            print("add")
+        with locker:
+            counter += 1
 
 
-def increment_n(_target: int, _n: int, _locker: Semaphore = None) -> None:
+def increment_n(_n: int) -> None:
     for _ in range(_n):
-        increment(_target, _locker)
+        increment()
 
 
 def error_callback(_error) -> None:
     print(_error, flush=True)
 
 
-counter = 0
-locker = Semaphore(10)
-
-
 def main() -> None:
+    global counter
 
-    with Pool(5) as pool:
-        pool.starmap(increment_n, [(counter, 1000, locker) for _ in range(5)])
+    thread1 = Thread(target=increment_n, args=(1000000,))
+    thread2 = Thread(target=increment_n, args=(1000000,))
+    thread3 = Thread(target=increment_n, args=(1000000,))
+
+    thread1.start()
+    thread2.start()
+    thread3.start()
+
+    thread1.join()
+    thread2.join()
+    thread3.join()
 
     print(f"Counter = {counter}")
-    assert counter == 5000
+    assert counter == 3000000
 
 
 if __name__ == "__main__":
