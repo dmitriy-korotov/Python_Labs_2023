@@ -8,7 +8,7 @@ from sys import stdout
 
 
 def write_shop(_shop: Shop):
-    with open("shop.txt", "ab") as file:
+    with open("shop.txt", "wb") as file:
         pickle.dump(_shop, file)
 
 
@@ -29,8 +29,7 @@ def main():
         except Exception as ex:
             print(ex)
 
-    is_need_input = True
-    while is_need_input:
+    while True:
 
         product_type = input("Select product type (F or H):\t")
 
@@ -43,7 +42,7 @@ def main():
 
         shop.add_product(product)
 
-        is_need_break = input("If you want end input press F")
+        is_need_break = input("If you want end input press F: ")
         if is_need_break.lower() == "f":
             break
 

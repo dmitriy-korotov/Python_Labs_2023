@@ -3,7 +3,8 @@ import pytest
 from HouseholdGood import HouseholdGood
 from Product import Product
 from Shop import Shop
-from main import write_and_read_shop
+from main import write_shop
+from main import read_shop
 
 
 class TestProduct:
@@ -23,7 +24,8 @@ class TestProduct:
     def test_shop_dumping(self):
         shop = Shop("Shop")
         shop.add_product(HouseholdGood("Product", 10, 20, 30, 40, 5))
-        shop = write_and_read_shop(shop)
+        write_shop(shop)
+        shop = read_shop()
         product = shop.get_products()[0]
 
         assert product.get_title() == "Product"
