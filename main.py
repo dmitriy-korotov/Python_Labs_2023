@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 TEST_FILE = "test.csv"
@@ -61,12 +63,25 @@ def task5() -> None:
     print(train_data["Cabin"])
 
 
+def task8() -> None:
+    print("\t\t\t================ TASK8 ===============")
+    print("\t\t\t============== Plotting ==============")
+
+    plt.hist(train_data['Age'], color='blue', edgecolor='black', bins=int(180 / 5))
+
+    plt.title('Histogram of Arrival Delays')
+    plt.ylabel('Survives')
+    plt.xlabel('Age')
+    plt.show()
+
+
 def main() -> None:
     task1()
     task2()
     task3()
     task4()
     task5()
+    task8()
 
 
 if __name__ == "__main__":
