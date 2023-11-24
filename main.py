@@ -60,16 +60,41 @@ def task4() -> None:
 def task5() -> None:
     print("\t\t\t========== TASK5 ==========")
     print("\t\t\t===== Filling columns =====")
-    print(train_data["Cabin"])
+
+    for col in train_data.columns:
+        if train_data[col].isna().value_counts()[False] != train_data.shape[0]:
+            try:
+                train_data.loc[train_data[col].isna(), col] = train_data[col].median()
+            except TypeError:
+                continue
+    print(train_data)
+
+
+def task6() -> None:
+    print("\t\t\t============ TASK6 ============")
+    print("\t\t\t===== Survived prediction =====")
+
+    print(train_data.groupby("Sex")["Survived"].value_counts())
+    print(train_data.groupby("Pclass")["Survived"].value_counts())
+    print(train_data.groupby("Age")["Survived"].value_counts())
+    print(train_data.groupby("SibSp")["Survived"].value_counts())
+    print(train_data.groupby("Parch")["Survived"].value_counts())
+    print(train_data.groupby("Cabin")["Survived"].value_counts())
+
+    test_data["Survived"] = 1
+
+    test_data.loc[test_data.Pclass == 3, "Survived"][test_data.Parch == 0][test_data.SibSp == 0] = 0
+
+    print(test_data)
 
 
 def task8() -> None:
     print("\t\t\t================ TASK8 ===============")
     print("\t\t\t============== Plotting ==============")
 
-    plt.hist(train_data['Age'], color='blue', edgecolor='black', bins=int(180 / 5))
+    train_data.hist(column="Age", by="Survived", bins=40, figsize=(10, 20), legend=True, grid=True, xrot=0, layout=(2, 1))
 
-    plt.title('Histogram of Arrival Delays')
+    plt.title('Histogram survived by age')
     plt.ylabel('Survives')
     plt.xlabel('Age')
     plt.show()
@@ -81,6 +106,7 @@ def main() -> None:
     task3()
     task4()
     task5()
+    task6()
     task8()
 
 
